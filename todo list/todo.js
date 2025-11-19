@@ -2,6 +2,7 @@ const todoInput = document.querySelector(".add_todo");
 const addBtn = document.querySelector(".add_btn");
 const todoList = document.querySelector(".todo_list");
 
+// creates the todo list item (li>checkbox,span,button)
 const createTodoItem = () => {
   let todoItem = document.createElement("li");
   todoItem.classList.add("todo_list_item");
@@ -31,6 +32,7 @@ const createTodoItem = () => {
 };
 
 addBtn.addEventListener("click", () => {
+  // checks for empty add
   if (todoInput.value !== "") {
     createTodoItem();
   }
