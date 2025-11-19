@@ -37,3 +37,9 @@ addBtn.addEventListener("click", () => {
     createTodoItem();
   }
 });
+
+todoInput.addEventListener("keydown", (event) => {
+  if (todoInput.value !== "" && event.key == "Enter") {
+    createTodoItem();
+  }
+});
