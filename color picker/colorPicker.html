@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css file link  -->
     <link rel="stylesheet" href="./colorPicker.css" />
     <title>Color Picker</title>
 
+    <!-- font Awsome generated links  -->
     <link
       rel="stylesheet"
       data-purpose="Layout StyleSheet"
@@ -462,11 +464,14 @@
     </noscript>
   </head>
   <body style="background-color: #f3f4f6">
+    <!-- =============== main section ================ -->
     <main class="main" id="body">
       <div class="container">
         <div class="wrapper">
+          <!-- ============= color picker ================= -->
           <div class="colorPicker_box">
             <h1 class="colorPicker_heading">Pick Your Color</h1>
+            <!-- displays generated color -->
             <div class="color_box">
               <span class="copy_box"
                 >Copy<i class="fa-thin fa-copy copy"></i
@@ -475,6 +480,7 @@
             <div class="range_box">
               <div class="red_box">
                 <div class="red_display"></div>
+                <!-- range bar -->
                 <input
                   id="red"
                   class="range"
@@ -510,12 +516,15 @@
                 />
               </div>
             </div>
+            <!-- random color button  -->
             <button class="randomBtn" id="btn">Random Color</button>
           </div>
+          <!-- ============= color picker ================= -->
         </div>
       </div>
     </main>
 
+    <!-- javascript -->
     <script type="module" src="./colorPicker.js"></script>
   </body>
 </html>
