@@ -1,0 +1,7 @@
+   font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+
+bg color: #f2f2f2
+heading color: #333
+0 4px 12px rgba(0,0,0,0.08)
+#3b82f6
