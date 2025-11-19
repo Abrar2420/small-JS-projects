@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* ================== common css ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  display: inline-block;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+
+  background-color: #f2f2f2;
+}
+
+.container {
+  width: 70%;
+  height: inherit;
+  margin: auto;
+}
+
+.wrapper {
+  width: 100%;
+  /* height: inherit; */
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.todo_box {
+  width: 80%;
+  margin-top: 10%;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 46px;
+  color: #333;
+}
+
+.add_box {
+  margin-bottom: 20px;
+}
+
+.add_todo {
+  padding: 12px 10px;
+  font-size: 18px;
+  width: 70%;
+  margin-right: 6px;
+}
+
+.add_btn {
+  padding: 12px 12px;
+  font-size: 18px;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.todo_list_item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0px;
+}
+
+.todo_check {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #3b82f6;
+}
+
+.todo_text {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.todo_btn {
+  padding: 8px 28px;
+  color: white;
+  background: black;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.todo_done {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
