@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* ================== common css ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  display: inline-block;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+.display {
+  background: #0d0e12; /* very dark blue-gray */
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.gameBox {
+  background: #1a1c23; /* dark neutral panel */
+  width: 90%;
+  max-width: 900px;
+  border-radius: 20px;
+  padding: 25px 30px;
+
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.05); /* subtle premium glow */
+  border: 1px solid rgba(255, 255, 255, 0.06); /* thin elegant outline */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.gameHeading {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  letter-spacing: 1px;
+
+  text-shadow: 0 0 6px rgba(58, 134, 255, 0.7),
+    0 0 12px rgba(167, 139, 250, 0.5);
+
+  margin-bottom: 10px;
+}
+
+.playerBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.computerBox {
+  width: 25%;
+  background: #1a1c23;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  position: relative;
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.25),
+    0 0 6px rgba(34, 211, 238, 0.4) inset;
+  border-color: rgba(34, 211, 238, 0.5);
+}
+
+.computerBox .robotImg {
+  width: 200px;
+}
+
+.humanBox {
+  width: 25%;
+  background: #1a1c23;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  position: relative;
+  box-shadow: 0 0 20px rgba(167, 139, 250, 0.25),
+    0 0 6px rgba(167, 139, 250, 0.4) inset;
+  border-color: rgba(167, 139, 250, 0.5);
+}
+.humanBox .humanImg {
+  width: 155px;
+}
+
+.userInputBox {
+  width: 100%;
+  background: #1a1c23;
+  border-radius: 18px;
+  padding: 18px 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
+}
+
+.inputImg {
+  width: 80px;
+  height: 80px;
+  padding: 10px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: 0.25s ease;
+
+  background: #0d0e12;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+.inputImg:hover {
+  transform: scale(1.07);
+  border-color: rgba(58, 134, 255, 0.5);
+  box-shadow: 0 0 15px rgba(58, 134, 255, 0.35);
+}
+
+.inputImg:active {
+  transform: scale(0.93);
+  box-shadow: 0 0 8px rgba(58, 134, 255, 0.25) inset;
+}
