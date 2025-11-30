@@ -110,7 +110,7 @@ li {
   border-color: rgba(167, 139, 250, 0.5);
 }
 .humanBox .humanImg {
-  width: 155px;
+  width: 138px;
 }
 
 .userInputBox {
@@ -155,4 +155,34 @@ li {
 .inputImg:active {
   transform: scale(0.93);
   box-shadow: 0 0 8px rgba(58, 134, 255, 0.25) inset;
+}
+
+.computerChoice {
+  position: absolute;
+  width: 100px;
+  transform: rotateZ(85deg) scale(0);
+  left: 115%;
+  bottom: -10%;
+  transition: all ease 0.3s;
+  opacity: 0;
+}
+
+.computerChoiceAnimate {
+  transform: rotateZ(85deg) scale(1);
+  opacity: 1;
+}
+
+.humanChoice {
+  position: absolute;
+  width: 98px;
+  transform: rotateZ(-85deg) scale(1);
+  left: -63%;
+  bottom: -16%;
+  transition: all ease 0.3s;
+  opacity: 0;
+}
+
+.humanChoiceAnimate {
+  transform: rotateZ(85deg) scale(1);
+  opacity: 1;
 }
