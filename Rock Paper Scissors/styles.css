@@ -160,29 +160,42 @@ li {
 .computerChoice {
   position: absolute;
   width: 100px;
-  transform: rotateZ(85deg) scale(0);
-  left: 115%;
-  bottom: -10%;
-  transition: all ease 0.3s;
-  opacity: 0;
-}
+  height: 150px;
 
-.computerChoiceAnimate {
   transform: rotateZ(85deg) scale(1);
-  opacity: 1;
+  left: 115%;
+  bottom: -8%;
+  transition: all 0.3s;
+  /* opacity: 0; */
 }
 
 .humanChoice {
   position: absolute;
   width: 98px;
+  height: 150px;
   transform: rotateZ(-85deg) scale(1);
   left: -63%;
-  bottom: -16%;
-  transition: all ease 0.3s;
-  opacity: 0;
+  bottom: -10%;
+  transition: all 0.3s;
+  /* opacity: 0; */
 }
 
-.humanChoiceAnimate {
-  transform: rotateZ(85deg) scale(1);
-  opacity: 1;
+.resultBox {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.win {
+  color: #28a745;
+}
+
+.lose {
+  color: #dc3545;
+}
+
+.draw {
+  color: #ffc107;
 }
