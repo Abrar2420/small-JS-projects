@@ -1,0 +1,51 @@
+/* Body background */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e9ecff;
+  font-family: Arial, sans-serif;
+}
+
+/* Game Box */
+.game-container {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-gap: 15px;
+}
+
+/* Card styling */
+.card {
+  width: 100px;
+  height: 100px;
+  background: #5e54c7;
+  border-radius: 9px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cover img */
+.card img {
+  width: 90%;
+  height: 90%;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+/* Game image (when revealed) */
+.card.revealed {
+  background: #717aef; /* revealed card bg */
+}
