@@ -35,6 +35,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all ease 1s;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+  background: #9089e4;
 }
 
 /* Cover img */
