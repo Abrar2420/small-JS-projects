@@ -7,20 +7,28 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
+    <!-- ========= sidebar ========== -->
     <nav
       class="bg-white shadow-md border-r border-gray-200 h-screen fixed top-0 left-0 min-w-[250px] py-6 px-4 overflow-auto"
     >
-      <ul id="list">
-        <li class="list-item">
-          <a
-            href="javascript:void(0)"
-            class="text-slate-700 font-medium text-[15px] block hover:text-slate-900 hover:bg-gray-100 rounded px-4 py-2 transition-all"
-          >
-            Dashboard
-          </a>
-        </li>
-      </ul>
+      <ul id="list"></ul>
     </nav>
+    <!-- ========= sidebar ========== -->
+
+    <!-- ========= product list ========== -->
+    <div class="p-4 mx-auto lg:max-w-6xl md:max-w-4xl">
+      <!-- heading -->
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 sm:mb-8">
+        Premium Threads
+      </h2>
+
+      <!-- product card  -->
+      <div
+        id="productCard"
+        class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6"
+      ></div>
+    </div>
+    <!-- ========= product list ========== -->
 
     <script type="module" src="./app.js"></script>
   </body>

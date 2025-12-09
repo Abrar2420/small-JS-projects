@@ -1,26 +1,30 @@
-const list = document.querySelector("#list");
+import {
+  fetchCategories,
+  fetchAllProducts,
+  productCardDisplay,
+  showProductSkeleton,
+  showCategorySkeleton,
+} from "./helper.js";
 
-const fetchCategories = (resolve, reject) => {
-  fetch("https://dummyjson.com/products/category-list")
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      resolve(data);
-    })
-    .catch((err) => {
-      reject(err);
-    });
-};
+const list = document.querySelector("#list");
+const productCard = document.querySelector("#productCard");
 
 const getCategories = () => {
   return new Promise(fetchCategories);
 };
 
+const getAllProducts = () => {
+  return new Promise(fetchAllProducts);
+};
+
+list.innerHTML = showCategorySkeleton();
+productCard.innerHTML = showProductSkeleton();
+
 window.addEventListener("load", (event) => {
   getCategories()
     .then((categoryList) => {
       // console.log(categoryList);
+
       let listContent = ``;
       categoryList.forEach((listItem) => {
         listContent += `<li class="list-item">
@@ -36,5 +40,25 @@ window.addEventListener("load", (event) => {
     })
     .then((listContent) => {
       list.innerHTML = listContent;
+    })
+    .then(() => {
+      getAllProducts()
+        .then((AllProducts) => {
+          return productCardDisplay(AllProducts.products);
+        })
+        .then((productCards) => {
+          //   console.log(productCards);
+          productCard.innerHTML = productCards;
+        })
+        .then(() => {
+          // const detailsBtn = document.querySelector("#detailsBtn");
+          // console.log(detailsBtn);
+          productCard.addEventListener("click", (e) => {
+            if (e.target.classList.contains("detailsBtn")) {
+              window.location.href =
+                "http://127.0.0.1:5500/API%20app/productDetails.html?id=2";
+            }
+          });
+        });
     });
 });
