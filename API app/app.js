@@ -4,6 +4,7 @@ import {
   productCardDisplay,
   showProductSkeleton,
   showCategorySkeleton,
+  productID,
 } from "./helper.js";
 
 const list = document.querySelector("#list");
@@ -55,8 +56,7 @@ window.addEventListener("load", (event) => {
           // console.log(detailsBtn);
           productCard.addEventListener("click", (e) => {
             if (e.target.classList.contains("detailsBtn")) {
-              window.location.href =
-                "http://127.0.0.1:5500/API%20app/productDetails.html?id=2";
+              window.location.href = `http://127.0.0.1:5500/API%20app/productDetails.html?id=${e.id}`;
             }
           });
         });

@@ -143,7 +143,7 @@ const fetchSingleProduct = (id = 1) => {
   });
 };
 
-const productID = params.get("id");
+export const productID = params.get("id");
 
 // console.log("product id: ", productID);
 window.addEventListener("load", () => {
