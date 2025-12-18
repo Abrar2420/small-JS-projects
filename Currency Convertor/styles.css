@@ -37,21 +37,147 @@ p {
   font-family: "Poppins", sans-serif;
 }
 
+/*& ================== main box css ====================== */
+
 .currency-convertor-box {
   width: 24vw;
+  min-width: 424px;
   background: white;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
+/*& ================== form css ====================== */
 .form {
   margin: 2rem 0 1rem 0;
 }
 
-.form input select button {
+.form input,
+select,
+button {
   width: 100%;
   border: none;
   outline: none;
   border-radius: 0.75rem;
 }
+
+/* form input css start */
+.form input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  /* background-color: #ccc; */
+  border: 1.5px solid #ccc;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form input:hover {
+  border-color: #888;
+}
+
+.form input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+  outline: none;
+}
+/* form input css end */
+/* forn select css start  */
+
+.form select {
+  width: 98px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.form select:hover {
+  border-color: #888;
+}
+
+.form select:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+  outline: none;
+}
+.select-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.select-container::after {
+  content: "▼";
+  position: absolute;
+  right: 1rem;
+  top: 35%;
+  font-size: 0.9rem;
+  color: #555;
+  pointer-events: none;
+}
+
+/* forn select css end  */
+
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.dropdown i {
+  margin-top: 1.25rem;
+}
+
+.select-container img {
+  width: 1.7rem;
+}
+
+/* message box css */
+.msg {
+  margin: 1.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+
+/* button styling css */
+.form button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #1d2671, #c33764);
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form button:hover {
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
+  filter: brightness(1.05);
+}
+
+.form button:active {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  filter: brightness(0.95);
+}
+
+/* .form button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+} */
