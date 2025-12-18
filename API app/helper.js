@@ -93,7 +93,7 @@ export const productCardDisplay = (product) => {
             </div>
           </a>
           <div class="min-h-[50px] p-4 !pt-0">
-            <button id = ""
+            <button data-id = ${item.id}
       class=" detailsBtn absolute left-0 right-0 bottom-3 cursor-pointer max-w-[88%] mx-auto text-sm px-2 py-2 font-medium w-full bg-blue-600 hover:bg-blue-700 text-white tracking-wide outline-none border-none rounded-sm"
     >
       Product details

@@ -127,7 +127,7 @@ const singleProductDetails = (products) => {
 </div>`;
 };
 
-const fetchSingleProduct = (id = 1) => {
+const fetchSingleProduct = (id) => {
   return new Promise((resolve, reject) => {
     fetch("https://dummyjson.com/products/" + id)
       .then((res) => {
@@ -147,7 +147,7 @@ export const productID = params.get("id");
 
 // console.log("product id: ", productID);
 window.addEventListener("load", () => {
-  fetchSingleProduct().then((data) => {
+  fetchSingleProduct(productID).then((data) => {
     console.log(data);
     singleProductDetails(data);
   });
