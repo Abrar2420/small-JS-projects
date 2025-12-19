@@ -20,7 +20,7 @@
       <!-- Main box  -->
       <div class="currency-convertor-box">
         <h2>Currency Convertor</h2>
-        <!-- form form taking input  -->
+        <!-- form for taking input  -->
         <form action="" class="form">
           <div class="amount">
             <p>Enter amount</p>
@@ -31,10 +31,7 @@
               <p>from</p>
               <div class="select-container">
                 <img src="https://flagsapi.com/US/flat/64.png" />
-                <select name="from" id="">
-                  <option value="USD">USD</option>
-                  <option value="BDT">BDT</option>
-                </select>
+                <select name="from" id="" class="select"></select>
               </div>
             </div>
             <i class="fa-solid fa-arrow-right-arrow-left"></i>
@@ -42,15 +39,12 @@
               <p>to</p>
               <div class="select-container">
                 <img src="https://flagsapi.com/BD/flat/64.png" />
-                <select name="from" id="">
-                  <option value="BDT">BDT</option>
-                  <option value="USD">USD</option>
-                </select>
+                <select name="to" id="" class="select"></select>
               </div>
             </div>
           </div>
           <div class="msg">1 USD = 110 BDT</div>
-          <button type="button">Get exchange rate</button>
+          <button type="submit">Get exchange rate</button>
         </form>
       </div>
     </div>

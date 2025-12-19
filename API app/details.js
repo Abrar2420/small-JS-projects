@@ -67,10 +67,7 @@ const singleProductDetails = (products) => {
           </svg>
           <span class="ml-2 text-gray-600">4.5 (120 reviews)</span>
         </div>
-        <p class="text-gray-700 mb-6">Experience premium sound quality and industry-leading noise cancellation
-          with
-          these wireless headphones. Perfect for music lovers and frequent travelers.</p>
-
+        <p class="text-gray-700 mb-6">${products.description}</p>
         <div class="mb-6">
           <h3 class="text-lg font-semibold mb-2">Color:</h3>
           <div class="flex space-x-2">
