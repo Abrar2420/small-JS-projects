@@ -17,10 +17,12 @@
           <input type="date" id="date" />
           <button class="calculate">Calculate</button>
         </div>
+        <p id="result"></p>
       </div>
     </div>
     <script>
       const calculateBtn = document.querySelector(".calculate");
+      const result = document.querySelector("#result");
       const userInput = document.querySelector("#date");
       // setting the max select able date to the current date
       userInput.max = new Date().toISOString().split("T")[0];
@@ -72,7 +74,15 @@
           m3 = 11;
           y3--;
         }
-        console.log(y3, m3, d3);
+        // console.log(y3, m3, d3);
+
+        if (y3 == 0 && m3 == 0) {
+          result.innerHTML = `You are <span>${d3}</span> days old`;
+        } else if (y3 == 0) {
+          result.innerHTML = `You are <span>${m3}</span> months, and <span>${d3}</span> days old`;
+        } else {
+          result.innerHTML = `You are <span>${y3}</span> years, <span>${m3}</span> months, and <span>${d3}</span> days old`;
+        }
       }
 
       function getDaysInMonth(year, month) {
