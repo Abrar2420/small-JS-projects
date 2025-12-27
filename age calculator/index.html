@@ -25,22 +25,58 @@
       // setting the max select able date to the current date
       userInput.max = new Date().toISOString().split("T")[0];
 
-      calculateBtn.addEventListener(() => {
+      calculateBtn.addEventListener("click", () => {
         calculateAge();
       });
 
       function calculateAge() {
+        // storing the new date in the userInput value format
         let birthDate = new Date(userInput.value);
 
-        let d1 = birthDate.getDate();
-        let m1 = birthDate.getMonth() + 1;
-        let y1 = birthDate.getFullYear();
+        let d1 = birthDate.getDate(); // getting the day from the user input value
+        let m1 = birthDate.getMonth() + 1; // getting the month from the user input value
+        let y1 = birthDate.getFullYear(); // getting the year from the user input value
 
-        let currDate = new Date();
+        let currDate = new Date(); // storing the current date
 
-        let d2 = currDate.getDate();
-        let m2 = currDate.getMonth() + 1;
-        let y2 = currDate.getFullYear();
+        let d2 = currDate.getDate(); // getting the current dates day
+        let m2 = currDate.getMonth() + 1; // getting the current dates month
+        let y2 = currDate.getFullYear(); // getting the current dates year
+
+        let d3, m3, y3; // declating variables which wiil contain the differnce form birthdate to current date
+
+        //getting the difference in year
+        y3 = y2 - y1;
+
+        if (m2 >= m1) {
+          // if m2 is bigger, then the subtraction of m1 from m2 would the difference in month
+          m3 = m2 - m1;
+        } else {
+          y3--;
+          m3 = 12 + m2 - m1; // else we have to add to it, and subtract a year
+        }
+
+        if (d2 >= d1) {
+          d3 = d2 - d1;
+        } else {
+          m3--;
+          // we have to do the same thing as months
+          // but the problem is the months can be +30, +31, or +28
+          // so we need to get the days the month form the birth date
+          // then add that to d2 - d1
+          d3 = getDaysInMonth(y1, m1) + d2 - d1;
+        }
+        if (m3 < 0) {
+          // if the month gets less then 0 while doing m-- change it to 11 and reduce a year
+
+          m3 = 11;
+          y3--;
+        }
+        console.log(y3, m3, d3);
+      }
+
+      function getDaysInMonth(year, month) {
+        return new Date(year, month, 0).getDate;
       }
     </script>
   </body>
