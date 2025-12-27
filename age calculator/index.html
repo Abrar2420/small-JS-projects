@@ -75,8 +75,11 @@
           y3--;
         }
         // console.log(y3, m3, d3);
+        console.log();
 
-        if (y3 == 0 && m3 == 0) {
+        if (y1 !== NaN && m1 !== NaN && d1 !== NaN) {
+          result.innerHTML = `Please select a Birth-Date`;
+        } else if (y3 == 0 && m3 == 0) {
           result.innerHTML = `You are <span>${d3}</span> days old`;
         } else if (y3 == 0) {
           result.innerHTML = `You are <span>${m3}</span> months, and <span>${d3}</span> days old`;
