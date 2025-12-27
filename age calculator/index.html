@@ -19,5 +19,29 @@
         </div>
       </div>
     </div>
+    <script>
+      const calculateBtn = document.querySelector(".calculate");
+      const userInput = document.querySelector("#date");
+      // setting the max select able date to the current date
+      userInput.max = new Date().toISOString().split("T")[0];
+
+      calculateBtn.addEventListener(() => {
+        calculateAge();
+      });
+
+      function calculateAge() {
+        let birthDate = new Date(userInput.value);
+
+        let d1 = birthDate.getDate();
+        let m1 = birthDate.getMonth() + 1;
+        let y1 = birthDate.getFullYear();
+
+        let currDate = new Date();
+
+        let d2 = currDate.getDate();
+        let m2 = currDate.getMonth() + 1;
+        let y2 = currDate.getFullYear();
+      }
+    </script>
   </body>
 </html>
