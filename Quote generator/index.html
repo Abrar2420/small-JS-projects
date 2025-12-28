@@ -7,12 +7,64 @@
     <title>Quote generator</title>
   </head>
   <body>
-    <div class="container">
-      <div class="quote-box">
-        <h2>Quote of the day</h2>
-        <blockquote class="quote">Loading...</blockquote>
-        <span class="author">Loading...</span>
+    <div class="quote-box">
+      <h2>Quote of the day</h2>
+      <blockquote class="quote">Loading...</blockquote>
+      <span class="author">Loading...</span>
+      <div class="btn-box">
+        <button id="quote-btn" class="btn">New Qoute</button>
+        <button id="post-btn" class="btn">
+          <svg
+            class="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="20"
+            height="20"
+            viewBox="0 0 30 30"
+            fill=" #e5e7eb"
+          >
+            <path
+              d="M26.37,26l-8.795-12.822l0.015,0.012L25.52,4h-2.65l-6.46,7.48L11.28,4H4.33l8.211,11.971L12.54,15.97L3.88,26h2.65 l7.182-8.322L19.42,26H26.37z M10.23,6l12.34,18h-2.1L8.12,6H10.23z"
+            ></path>
+          </svg>
+          Post
+        </button>
       </div>
     </div>
+
+    <script>
+      const API_URL = "https://dummyjson.com/quotes/random";
+
+      const quote = document.querySelector(".quote");
+      const author = document.querySelector(".author");
+
+      const quoteBtn = document.querySelector("#quote-btn");
+      const postBtn = document.querySelector("#post-btn");
+
+      async function getQuote(url) {
+        const res = await fetch(url);
+        let data = await res.json();
+        console.log(data);
+
+        quote.innerHTML = data.quote;
+        author.innerHTML = data.author;
+      }
+
+      quoteBtn.addEventListener("click", () => getQuote(API_URL));
+      getQuote(API_URL);
+
+      postBtn.addEventListener("click", () => {
+        window.open(
+          "https://twitter.com/intent/tweet?text=" +
+            quote.innerHTML +
+            "---- by " +
+            author.innerHTML,
+          "Tweet Window",
+          "width= 600px",
+          "height= 300px"
+        );
+      });
+    </script>
   </body>
 </html>
