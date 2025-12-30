@@ -4,20 +4,113 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward"
+    />
+    <!-- swiper css link-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
     <title>Card Slider</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container swiper">
       <div class="card-wrapper">
-        <ul class="card-list">
-          <li class="card-item">
+        <ul class="card-list swiper-wrapper">
+          <li class="card-item swiper-slide">
             <a href="" class="card-link">
-              <img src="./images/developer.jpg" alt="Card image" />
+              <img
+                src="./images/developer.jpg"
+                alt="Card image"
+                class="card-image"
+              />
+              <p class="badge">Developer</p>
+              <h2 class="card-title">
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </h2>
+              <button class="material-symbols-rounded card-btn">
+                arrow_forward
+              </button>
+            </a>
+          </li>
+          <li class="card-item swiper-slide">
+            <a href="" class="card-link">
+              <img
+                src="./images/designer.jpg"
+                alt="Card image"
+                class="card-image"
+              />
+              <p class="badge designer">Designer</p>
+              <h2 class="card-title">
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </h2>
+              <button class="material-symbols-rounded card-btn">
+                arrow_forward
+              </button>
+            </a>
+          </li>
+          <li class="card-item swiper-slide">
+            <a href="" class="card-link">
+              <img
+                src="./images/editor.jpg"
+                alt="Card image"
+                class="card-image"
+              />
+              <p class="badge editor">Editor</p>
+              <h2 class="card-title">
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </h2>
+              <button class="material-symbols-rounded card-btn">
+                arrow_forward
+              </button>
+            </a>
+          </li>
+          <li class="card-item swiper-slide">
+            <a href="" class="card-link">
+              <img
+                src="./images/gamer.jpg"
+                alt="Card image"
+                class="card-image"
+              />
+              <p class="badge gamer">Gamer</p>
+              <h2 class="card-title">
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </h2>
+              <button class="material-symbols-rounded card-btn">
+                arrow_forward
+              </button>
+            </a>
+          </li>
+          <li class="card-item swiper-slide">
+            <a href="" class="card-link">
+              <img
+                src="./images/marketer.jpg"
+                alt="Card image"
+                class="card-image"
+              />
+              <p class="badge marketer">Marketer</p>
+              <h2 class="card-title">
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </h2>
+              <button class="material-symbols-rounded card-btn">
+                arrow_forward
+              </button>
             </a>
           </li>
         </ul>
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
     </div>
+
+    <!-- swiper js  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <!-- custom js  -->
     <script src="./script.js"></script>
   </body>
 </html>
