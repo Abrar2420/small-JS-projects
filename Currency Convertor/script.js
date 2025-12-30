@@ -72,9 +72,10 @@ submitBtn.addEventListener("click", async (event) => {
 
   // getting the current in this (yyyy-mm-dd) format
   const currentDate = new Date().toISOString().split("T")[0]; // usinsg split() get the first part of the returned date
-
+  // console.log(currentDate);
   // storing the dynamic url for the api
   // date & currency has been put in in the api as per the current date, & and select value
+
   const URL = `https://${currentDate}.currency-api.pages.dev/v1/currencies/${fromCurrency}.json`;
   //   console.log(fromCurrency, toCurrency);
   try {
