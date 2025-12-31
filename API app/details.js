@@ -62,9 +62,9 @@ const singleProductDetails = (products) => {
         <div class="flex items-center mb-4">
          ${getRatingStar(products.rating)}
           
-          <span class="ml-2 text-gray-600">4.5 (${
-            products.reviews.length
-          } reviews)</span>
+          <span class="ml-2 text-gray-600">${products.rating} (${
+    products.reviews.length
+  } reviews)</span>
         </div>
         <div class="flex items-center gap-2 mb-4">
         <!-- green dot -->
