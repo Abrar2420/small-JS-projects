@@ -1,7 +1,31 @@
+const getRatingStar = (rating) => {
+  const fullStar = `★`;
+  const emptyStar = `☆`;
+  const totalStars = 5;
+
+  const fullStarCount = Math.round(rating);
+
+  let star = ``;
+  for (let i = 0; i < totalStars; i++) {
+    if (i < fullStarCount) {
+      star += `<span class="text-yellow-400 text-[26px] ">${fullStar}</span>`;
+    } else {
+      star += `<span class="text-grey-400 text-[26px]">${emptyStar}</span>`;
+    }
+  }
+  return star;
+};
+
+const getDiscountPrice = (price, discountPercentage) => {
+  let discount = (price / 100) * discountPercentage;
+  let discountedPrice = (price - discount).toFixed(2);
+  return discountedPrice;
+};
 // product derails page
 const params = new URLSearchParams(window.location.search);
 
 const singleProductDetails = (products) => {
+  console.log(products);
   const product = document.querySelector("#product");
   product.innerHTML = `<div class="bg-gray-100">
   <div class="container mx-auto px-4 py-8">
@@ -11,18 +35,16 @@ const singleProductDetails = (products) => {
         <img src="${products.thumbnail}     "
                     class="w-full h-auto rounded-lg shadow-md mb-4" id="mainImage">
         <div class="flex gap-4 py-4 justify-center overflow-x-auto">
-          <img src="https://images.unsplash.com/photo-1505751171710-1f6d0ace5a85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxMnx8aGVhZHBob25lfGVufDB8MHx8fDE3MjEzMDM2OTB8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Thumbnail 1"
-                        class="size-16 sm:size-20 object-cover rounded-md cursor-pointer opacity-60 hover:opacity-100 transition duration-300"
-                        onclick="changeImage(this.src)">
-          <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw0fHxoZWFkcGhvbmV8ZW58MHwwfHx8MTcyMTMwMzY5MHww&ixlib=rb-4.0.3&q=80&w=1080" alt="Thumbnail 2"
-                        class="size-16 sm:size-20 object-cover rounded-md cursor-pointer opacity-60 hover:opacity-100 transition duration-300"
-                        onclick="changeImage(this.src)">
-          <img src="https://images.unsplash.com/photo-1496957961599-e35b69ef5d7c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw4fHxoZWFkcGhvbmV8ZW58MHwwfHx8MTcyMTMwMzY5MHww&ixlib=rb-4.0.3&q=80&w=1080" alt="Thumbnail 3"
-                        class="size-16 sm:size-20 object-cover rounded-md cursor-pointer opacity-60 hover:opacity-100 transition duration-300"
-                        onclick="changeImage(this.src)">
-          <img src="https://images.unsplash.com/photo-1528148343865-51218c4a13e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwzfHxoZWFkcGhvbmV8ZW58MHwwfHx8MTcyMTMwMzY5MHww&ixlib=rb-4.0.3&q=80&w=1080" alt="Thumbnail 4"
-                        class="size-16 sm:size-20 object-cover rounded-md cursor-pointer opacity-60 hover:opacity-100 transition duration-300"
-                        onclick="changeImage(this.src)">
+         ${products.images.map(
+           (img) => `
+            <img
+              src="${img}"
+              class="size-16 object-cover rounded-md cursor-pointer opacity-60 hover:opacity-100"
+              data-src="${img}"
+            />
+          `
+         )}
+          
         </div>
       </div>
 
@@ -31,41 +53,30 @@ const singleProductDetails = (products) => {
         <h2 class="text-3xl font-bold mb-2">${products.title}</h2>
         <p class="text-gray-600 mb-4">SKU: ${products.sku}</p>
         <div class="mb-4">
-          <span class="text-2xl font-bold mr-2">$${products.price}</span>
-          <span class="text-gray-500 line-through">$399.99</span>
+          <span class="text-2xl font-bold mr-2">$${getDiscountPrice(
+            products.price,
+            products.discountPercentage
+          )}</span>
+          <span class="text-gray-500 line-through">$${products.price}</span>
         </div>
         <div class="flex items-center mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-            class="size-6 text-yellow-500">
-            <path fill-rule="evenodd"
-              d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-              clip-rule="evenodd" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-            class="size-6 text-yellow-500">
-            <path fill-rule="evenodd"
-              d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-              clip-rule="evenodd" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-            class="size-6 text-yellow-500">
-            <path fill-rule="evenodd"
-              d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-              clip-rule="evenodd" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-            class="size-6 text-yellow-500">
-            <path fill-rule="evenodd"
-              d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-              clip-rule="evenodd" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-            class="size-6 text-yellow-500">
-            <path fill-rule="evenodd"
-              d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-              clip-rule="evenodd" />
-          </svg>
-          <span class="ml-2 text-gray-600">4.5 (120 reviews)</span>
+         ${getRatingStar(products.rating)}
+          
+          <span class="ml-2 text-gray-600">4.5 (${
+            products.reviews.length
+          } reviews)</span>
+        </div>
+        <div class="flex items-center gap-2 mb-4">
+        <!-- green dot -->
+          <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
+
+          <span class="text-sm font-medium text-green-700">
+              ${products.availabilityStatus}
+           </span>
+
+          <span class="text-sm text-gray-500">
+            (Only ${products.stock} left)
+           </span>
         </div>
         <p class="text-gray-700 mb-6">${products.description}</p>
         <div class="mb-6">
@@ -110,10 +121,8 @@ const singleProductDetails = (products) => {
         <div>
           <h3 class="text-lg font-semibold mb-2">Key Features:</h3>
           <ul class="list-disc list-inside text-gray-700">
-            <li>Industry-leading noise cancellation</li>
-            <li>30-hour battery life</li>
-            <li>Touch sensor controls</li>
-            <li>Speak-to-chat technology</li>
+          ${products.tags.map((tag) => `<li>${tag}</li>`)}
+
           </ul>
         </div>
       </div>
