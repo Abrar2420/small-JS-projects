@@ -645,10 +645,6 @@ video {
   padding: 1rem;
 }
 
-.font-serif {
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-}
-
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -674,10 +670,6 @@ video {
 .text-\[\#fff39f\] {
   --tw-text-opacity: 1;
   color: rgb(255 243 159 / var(--tw-text-opacity, 1));
-}
-
-.text-blue {
-  color: var(--color);
 }
 
 .text-white {
