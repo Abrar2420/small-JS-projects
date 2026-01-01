@@ -612,6 +612,22 @@ video {
   height: 100lvh;
 }
 
+.min-h-\[220px\] {
+  min-height: 220px;
+}
+
+.min-h-\[2195px\] {
+  min-height: 2195px;
+}
+
+.min-h-\[195px\] {
+  min-height: 195px;
+}
+
+.min-h-\[\`195px\] {
+  min-height: `195px;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -622,6 +638,14 @@ video {
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
 }
 
 .gap-8 {
