@@ -1,0 +1,13 @@
+# Node modules (never push)
+node_modules/
+
+# Tailwind / build config (don't push)
+tailwind.config.js
+postcss.config.js
+
+# NPM files (optional, but you said you don't want them)
+package.json
+package-lock.json
+
+# Tailwind source file (optional)
+input.css
