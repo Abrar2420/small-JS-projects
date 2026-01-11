@@ -6,13 +6,14 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>TODO_with_API</title>
   </head>
-  <body class="">
-    <div
-      class="bg-blue-50 w-full h-lvh flex flex-col items-center justify-center"
-    >
-      <div class="container mx-auto px-40">
+  <body class="bg-blue-50">
+    <div class="w-full flex flex-col items-center justify-center">
+      <div class="pt-24">
+        <h1 class="text-2xl font-bold">📝 All you TODO's in one place</h1>
+      </div>
+      <div class="container mx-auto px-72 py-12">
         <table class="w-full border border-gray-200 text-sm">
-          <thead class="bg-gray-100 text-gray-700">
+          <thead id="todo-holder" class="bg-gray-100 text-gray-700">
             <tr>
               <th class="border px-4 py-2 text-left">ID</th>
               <th class="border px-4 py-2 text-left">Todo</th>
