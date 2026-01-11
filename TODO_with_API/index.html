@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>TODO_with_API</title>
+  </head>
+  <body class="">
+    <div
+      class="bg-blue-50 w-full h-lvh flex flex-col items-center justify-center"
+    >
+      <div class="container mx-auto px-40">
+        <table class="w-full border border-gray-200 text-sm">
+          <thead class="bg-gray-100 text-gray-700">
+            <tr>
+              <th class="border px-4 py-2 text-left">ID</th>
+              <th class="border px-4 py-2 text-left">Todo</th>
+              <th class="border px-4 py-2 text-left">Completed</th>
+              <th class="border px-4 py-2 text-left">User ID</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="hover:bg-gray-50">
+              <td class="border px-4 py-2">1</td>
+              <td class="border px-4 py-2">
+                Do something nice for someone I care about
+              </td>
+              <td class="border px-4 py-2 text-green-600 font-medium">Yes</td>
+              <td class="border px-4 py-2">26</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script type="module" src="./src/login/login.js"></script>
+  </body>
+</html>
