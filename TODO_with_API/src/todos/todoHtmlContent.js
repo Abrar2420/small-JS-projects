@@ -3,10 +3,10 @@ export class TodoHtmlContentSupplier {
     function todoStatusCheck(status) {
       let todoStatus = ``;
       if (status === true) {
-        todoStatus = `<td class="border px-4 py-2 text-green-600 font-medium">Yes</td>`;
+        todoStatus = `<td class="border px-4 py-2 text-green-600 font-medium">Yes <span>✔️</span></td>`;
         return todoStatus;
       } else {
-        todoStatus = `<td class="border px-4 py-2 text-red-600 font-medium">No</td>`;
+        todoStatus = `<td class="border px-4 py-2 text-red-600 font-medium">No <span>❌</span></td>`;
         return todoStatus;
       }
     }
