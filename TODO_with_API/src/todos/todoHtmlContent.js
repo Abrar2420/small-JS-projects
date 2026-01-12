@@ -1,5 +1,8 @@
 export class TodoHtmlContentSupplier {
+  //& rendering all html with the todos
   static renderTodoHTML(todoItem) {
+    // this function checks is the completed status is true of false
+    // and provides the html for both status
     function todoStatusCheck(status) {
       let todoStatus = ``;
       if (status === true) {
@@ -23,6 +26,7 @@ export class TodoHtmlContentSupplier {
     return todoContent;
   }
 
+  // this method returns the loading skeleton html as a string
   static renderTodoSkeleton() {
     return `
   <!-- Skeleton row 1 -->
