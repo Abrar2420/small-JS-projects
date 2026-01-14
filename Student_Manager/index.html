@@ -3,9 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Student Manager</title>
   </head>
   <body>
-    <h1>sutdent manager</h1>
+    <header>
+      <nav>
+        <div class="w-full bg-indigo-800">
+          <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-6">
+              <!-- nav logo and menu  -->
+              <div class="flex items-center gap-32">
+                <div>
+                  <h1 class="text-2xl text-white font-bold">
+                    Student Dashboard
+                  </h1>
+                </div>
+                <div>
+                  <ul class="flex items-center gap-8">
+                    <li><a class="text-white" href="#">Students</a></li>
+                    <li><a class="text-white" href="#">Sections</a></li>
+                    <li><a class="text-white" href="#">Results</a></li>
+                    <li><a class="text-white" href="#">Rankings</a></li>
+                    <li><a class="text-white" href="#">Teachers</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- profile part -->
+              <div>
+                <a
+                  href="./userProfile.html"
+                  class="flex items-center space-x-3 rtl:space-x-reverse"
+                >
+                  <img
+                    src="https://static.vecteezy.com/system/resources/thumbnails/048/216/761/small/modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png.png"
+                    class="h-9"
+                    alt="Flowbite Logo"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
   </body>
 </html>
