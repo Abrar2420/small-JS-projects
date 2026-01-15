@@ -1,4 +1,7 @@
 import { students } from "./studentDetails.js";
 import { StudentEngine } from "./studentEngine.js";
 
-const studentManager = new StudentEngine(students);
+const studetnHolder = document.querySelector("#all-students");
+const studentManager = new StudentEngine(students, studetnHolder);
+
+studentManager.log();
