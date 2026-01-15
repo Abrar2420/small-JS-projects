@@ -2,7 +2,7 @@ export class StudentHtmlSupplier {
   static studentHtml(allStudents) {
     let studentContent = ``;
     allStudents.forEach((student) => {
-      studentContent = `<div class="flex justify-around p-6 rounded-lg shadow-lg bg-white">
+      studentContent += `<div class="flex justify-around p-6 rounded-lg shadow-lg bg-white">
               <div>
                 <h3 class="mb-2 text-lg font-bold">Studetn details</h3>
                 <p class="flex gap-3 justify-between">
@@ -40,5 +40,7 @@ export class StudentHtmlSupplier {
               </div>
             </div>`;
     });
+
+    return studentContent;
   }
 }

@@ -1,9 +1,14 @@
+import { StudentHtmlSupplier } from "./studentHtmlSuplier.js";
+
 export class StudentEngine {
-  constructor(students) {
+  constructor(students, studetnsHolder) {
     this.students = students;
+    this.studetnsHolder = studetnsHolder;
   }
 
-  log() {
-    console.log(this.students);
+  renderStudentContent() {
+    const allStudents = StudentHtmlSupplier.studentHtml(this.students);
+
+    this.studetnsHolder.innerHTML = allStudents;
   }
 }
