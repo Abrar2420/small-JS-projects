@@ -1,3 +1,4 @@
 import { students } from "./studentDetails.js";
+import { StudentEngine } from "./studentEngine.js";
 
-// console.log(students);
+const studentManager = new StudentEngine(students);
